@@ -26,9 +26,9 @@ public class Tarefa {
 	@Column(name = "descricao")
 	private String descricao;
 	
-	@Column(name = "data_execucao")
+	@Column(name = "prazo")
 	@Temporal(TemporalType.DATE)
-	private Date dataExecucao;
+	private Date prazo;
 	
 	@Column(name = "situacao")
 	private String situacao;
@@ -37,12 +37,12 @@ public class Tarefa {
 		super();
 	}
 
-	public Tarefa(int id, String resumo, String descricao, Date dataExecucao, String situacao) {
+	public Tarefa(int id, String resumo, String descricao, Date prazo, String situacao) {
 		super();
 		this.id = id;
 		this.resumo = resumo;
 		this.descricao = descricao;
-		this.dataExecucao = dataExecucao;
+		this.prazo = prazo;
 		this.situacao = situacao;
 	}
 
@@ -70,12 +70,12 @@ public class Tarefa {
 		this.descricao = descricao;
 	}
 
-	public Date getDataExecucao() {
-		return dataExecucao;
+	public Date getPrazo() {
+		return prazo;
 	}
 
-	public void setDataExecucao(Date dataExecucao) {
-		this.dataExecucao = dataExecucao;
+	public void setPrazo(Date prazo) {
+		this.prazo = prazo;
 	}
 
 	public String getSituacao() {
@@ -110,7 +110,7 @@ public class Tarefa {
 
 	@Override
 	public String toString() {
-		return "Tarefa [id=" + id + ", resumo=" + resumo + ", descricao=" + descricao + ", dataExecucao=" + dataExecucao
+		return "Tarefa [id=" + id + ", resumo=" + resumo + ", descricao=" + descricao + ", prazo=" + prazo
 				+ ", situacao=" + situacao + "]";
 	}
 }
