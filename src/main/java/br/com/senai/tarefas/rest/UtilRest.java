@@ -1,5 +1,8 @@
 package br.com.senai.tarefas.rest;
 
+import java.text.SimpleDateFormat;
+import java.util.TimeZone;
+
 import javax.ws.rs.core.Response;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -12,7 +15,10 @@ import br.com.senai.tarefas.exception.TarefasException;
 public class UtilRest {
 
 	protected ObjectMapper getObjectMapper(){
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
+        dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
 		return new ObjectMapper()
+				.setDateFormat(dateFormat)
 				.configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false)
 				.configure(SerializationFeature.INDENT_OUTPUT, true)
 				.setSerializationInclusion(JsonInclude.Include.NON_EMPTY);
