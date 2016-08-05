@@ -15,7 +15,7 @@ import br.com.senai.tarefas.exception.TarefasException;
 public class UtilRest {
 
 	protected ObjectMapper getObjectMapper(){
-		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
 		return new ObjectMapper()
 				.setDateFormat(dateFormat)
