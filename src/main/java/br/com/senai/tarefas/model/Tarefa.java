@@ -1,6 +1,6 @@
 package br.com.senai.tarefas.model;
 
-import java.util.Date;
+import java.util.Calendar;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -28,7 +28,7 @@ public class Tarefa {
 	
 	@Column(name = "prazo")
 	@Temporal(TemporalType.DATE)
-	private Date prazo;
+	private Calendar prazo;
 	
 	@Column(name = "situacao")
 	private String situacao;
@@ -37,7 +37,7 @@ public class Tarefa {
 		super();
 	}
 
-	public Tarefa(int id, String resumo, String descricao, Date prazo, String situacao) {
+	public Tarefa(int id, String resumo, String descricao, Calendar prazo, String situacao) {
 		super();
 		this.id = id;
 		this.resumo = resumo;
@@ -70,11 +70,11 @@ public class Tarefa {
 		this.descricao = descricao;
 	}
 
-	public Date getPrazo() {
+	public Calendar getPrazo() {
 		return prazo;
 	}
 
-	public void setPrazo(Date prazo) {
+	public void setPrazo(Calendar prazo) {
 		this.prazo = prazo;
 	}
 

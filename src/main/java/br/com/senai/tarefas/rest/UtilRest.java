@@ -5,6 +5,7 @@ import javax.ws.rs.core.Response;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
 
 import br.com.senai.tarefas.exception.TarefasException;
 
@@ -12,6 +13,8 @@ public class UtilRest {
 
 	protected ObjectMapper getObjectMapper(){
 		return new ObjectMapper()
+				.configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false)
+				.configure(SerializationFeature.INDENT_OUTPUT, true)
 				.setSerializationInclusion(JsonInclude.Include.NON_EMPTY);
 	}
 	
